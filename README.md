@@ -1,4 +1,4 @@
-# Ansible role : Init
+# Ansible role : OpenStack Requirements
 
 ![](https://img.shields.io/github/release/Pandemonium1986/ansible-role-os-requirements.svg)
 ![](https://img.shields.io/github/repo-size/Pandemonium1986/ansible-role-os-requirements.svg)
