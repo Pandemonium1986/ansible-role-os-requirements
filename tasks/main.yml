@@ -1,2 +1,17 @@
 ---
-# tasks file for ansible-role-os-requirements
+- name:          Ensure openstacksdk is installed
+  pip:
+    name:        openstacksdk
+    extra_args:  --user
+#  delegate_to:  localhost
+- name:          Ensure clouds.yaml is present on control node via stat
+  stat:
+    path:        "{{ osrequirements_oscli_config_file }}"
+  register:      oscfp_result
+#  delegate_to:  localhost
+- name:          Ensure clouds.yaml is present on control node via assert
+  assert:
+    that:
+      - oscfp_result.stat.exists
+    fail_msg:    "{{ osrequirements_oscli_config_file }}file is missing. Thank you for creating it"  # yamllint disable-line rule:line-length
+    success_msg: "{{ osrequirements_oscli_config_file }}file is available."

@@ -1,2 +1,4 @@
 ---
-# defaults file for ansible-role-os-requirements
+osrequirements_users:
+  - pandemonium
+osrequirements_oscli_config_file: "~/.config/openstack/clouds.yaml"

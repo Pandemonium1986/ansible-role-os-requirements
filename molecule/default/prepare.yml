@@ -1,0 +1,27 @@
+---
+- name:        Prepare
+  hosts:       all
+  tasks:
+    - name:    Ensure sudo is installed on all platforms
+      package:
+        name:  [ sudo ]
+        state: present
+    - name:    Create molecule user
+      user:
+        name:  pandemonium
+    - name:    Generate folders for ~/.config/openstack/clouds.yaml
+      file:
+        path:  ~/.config/openstack
+        state: directory
+        owner: pandemonium
+        group: pandemonium
+        mode:  0755
+      become:  pandemonium
+    - name:    Generate fake ~/.config/openstack/clouds.yaml
+      file:
+        path:  ~/.config/openstack/clouds.yaml
+        state: touch
+        owner: pandemonium
+        group: pandemonium
+        mode:  0644
+      become:  pandemonium
