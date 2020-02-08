@@ -9,31 +9,35 @@ Install and check if OpenStack requirements are available on control node.
 
 ## Requirements
 
-Pip is the only package necessary for the proper execution of this role.
+This role is not self contained. He requires pandemonium1986.pip to work correctly.
+
+```sh
+  ansible-galaxy install -f pandemonium1986.pip
+```
 
 ## Role Variables
 
 From defaults/main.yml :
 
 ```yaml
-# TODO
-```
-
-From vars/main.yml (depends of distribution):
-
-```yaml
-# TODO
+osrequirements_users:
+  - pandemonium
+osrequirements_oscli_config_file: "~/.config/openstack/clouds.yaml"
 ```
 
 ## Dependencies
 
-None.
+-   pandemonium1986.pip
 
 ## Example Playbook
 
 ```yaml
----
-# TODO
+- name :                        Openstack deployement
+  hosts:                        local
+  become:                       false
+  tasks:
+    - import_role:
+        name:                   pandemonium1986.os_requirements   
 ```
 
 ## License
