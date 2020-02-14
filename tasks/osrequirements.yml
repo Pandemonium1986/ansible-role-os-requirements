@@ -1,0 +1,15 @@
+---
+- name:          Ensure openstacksdk is installed
+  pip:
+    name:        openstacksdk
+    extra_args:  --user
+- name:          Ensure clouds.yaml is present on control node via stat
+  stat:
+    path:        "{{ osrequirements_oscli_config_file }}"
+  register:      oscfp_result
+- name:          Ensure clouds.yaml is present on control node via assert
+  assert:
+    that:
+      - oscfp_result.stat.exists
+    fail_msg:    "{{ osrequirements_oscli_config_file }}file is missing. Thank you for creating it"  # yamllint disable-line rule:line-length
+    success_msg: "{{ osrequirements_oscli_config_file }}file is available."
