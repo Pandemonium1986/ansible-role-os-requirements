@@ -1,17 +1,10 @@
 ---
-- name:          Ensure openstacksdk is installed
-  pip:
-    name:        openstacksdk
-    extra_args:  --user
-#  delegate_to:  localhost
-- name:          Ensure clouds.yaml is present on control node via stat
-  stat:
-    path:        "{{ osrequirements_oscli_config_file }}"
-  register:      oscfp_result
-#  delegate_to:  localhost
-- name:          Ensure clouds.yaml is present on control node via assert
-  assert:
-    that:
-      - oscfp_result.stat.exists
-    fail_msg:    "{{ osrequirements_oscli_config_file }}file is missing. Thank you for creating it"  # yamllint disable-line rule:line-length
-    success_msg: "{{ osrequirements_oscli_config_file }}file is available."
+- name:            Ensure os-requirements tasks are performed for osrequirements_users # yamllint disable-line rule:line-length
+  include_tasks:
+    file:          osrequirements.yml
+    apply:
+      become:      true
+      become_user: "{{ user }}"
+  loop:            "{{ osrequirements_users }}"
+  loop_control:
+    loop_var:      user
