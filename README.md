@@ -34,7 +34,7 @@ osrequirements_oscli_config_file: "~/.config/openstack/clouds.yaml"
 ```yaml
 - name :                        Openstack deployement
   hosts:                        local
-  become:                       false
+  become:                       true
   tasks:
     - import_role:
         name:                   pandemonium1986.os_requirements   
