@@ -1,5 +1,9 @@
 ---
 - name:  Converge
   hosts: all
+  vars:
+    osrequirements_users:
+      - pandemonium
+      - joseph
   roles:
     - role: ansible-role-os-requirements
