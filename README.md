@@ -1,9 +1,10 @@
 # Ansible role : OpenStack Requirements
 
-![](https://img.shields.io/github/release/Pandemonium1986/ansible-role-os-requirements.svg)
-![](https://img.shields.io/github/repo-size/Pandemonium1986/ansible-role-os-requirements.svg)
-![](https://img.shields.io/github/release-date/Pandemonium1986/ansible-role-os-requirements.svg)
-![](https://img.shields.io/github/license/Pandemonium1986/ansible-role-os-requirements.svg)
+![Ansible Role](https://img.shields.io/ansible/role/46372?logo=ansible)
+![Gitlab pipeline status](https://img.shields.io/gitlab/pipeline/Pandemonium1986/ansible-role-os-requirements?logo=gitlab)
+![GitHub release](https://img.shields.io/github/release/Pandemonium1986/ansible-role-os-requirements.svg?logo=github)
+![Github license](https://img.shields.io/github/license/Pandemonium1986/ansible-role-os-requirements.svg?logo=github)
+![Ansible Quality Score](https://img.shields.io/ansible/quality/46372?logo=ansible)
 
 Install and check if OpenStack requirements are available on control node.
 
