@@ -1,6 +1,6 @@
 ---
 galaxy_info:
-  role_name:           os-requirements
+  role_name:           os_requirements
   author:              Michael Maffait
   description:         Install openstacksdk and verify if clouds.yaml is available  # yamllint disable-line rule:line-length
   # company:           your company (optional)
