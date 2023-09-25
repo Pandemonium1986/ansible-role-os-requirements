@@ -8,6 +8,10 @@
 
 Install and check if OpenStack requirements are available on control node.
 
+## Disclaimer
+
+!!! This images is no longer support.!!!
+
 ## Requirements
 
 This role is not self contained. He requires pandemonium1986.pip to work correctly.
